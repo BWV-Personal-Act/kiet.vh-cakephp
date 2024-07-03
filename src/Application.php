@@ -50,6 +50,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
         // Call parent to load bootstrap from files.
         parent::bootstrap();
         $this->addPlugin('Authentication');
+        $this->addPlugin('GrandFelix/Webpack', ['bootstrap' => true, 'routes' => false]);
         if (PHP_SAPI !== 'cli') {
             FactoryLocator::add(
                 'Table',
