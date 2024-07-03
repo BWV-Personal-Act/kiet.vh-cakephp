@@ -50,7 +50,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         'daterangepicker',
         'summernote-bs4.min',
     ]);
-    ?>
+?>
 </head>
 
 <body>
@@ -58,8 +58,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->element('sidebar'); ?>
     <main class="main">
         <div class="content-wrapper" style="min-height: 172px;">
-        <?= $this->Flash->render(); ?>
-        <?= $this->fetch('content'); ?>
+            <?= $this->Flash->render(); ?>
+            <div class="container-fluid">
+                <?= $this->fetch('content'); ?>
+            </div>
 
         </div>
 
@@ -68,24 +70,24 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-        </script>
+    </script>
     <?= $this->Html->script([
-        'jquery/jquery.min',
-        'jquery-ui/jquery-ui.min',
-        'bootstrap/js/bootstrap.bundle.min',
-        'sparklines/sparkline',
-        'jqvmap/jquery.vmap.min',
-        'jqvmap/maps/jquery.vmap.usa',
-        'jquery-knob/jquery.knob.min',
-        'daterangepicker/daterangepicker',
-        'moment/moment.min',
-        'adminlte',
-        'pages/dashboard',
-    ]);
-    ?>
+    'jquery/jquery.min',
+    'jquery-ui/jquery-ui.min',
+    'bootstrap/js/bootstrap.bundle.min',
+    'sparklines/sparkline',
+    'jqvmap/jquery.vmap.min',
+    'jqvmap/maps/jquery.vmap.usa',
+    'jquery-knob/jquery.knob.min',
+    'daterangepicker/daterangepicker',
+    'moment/moment.min',
+    'adminlte',
+    'pages/dashboard',
+]);
+?>
 </body>
 
 </html>
