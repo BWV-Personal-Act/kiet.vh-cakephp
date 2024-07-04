@@ -59,7 +59,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <main class="main">
         <div class="content-wrapper" style="min-height: 172px;">
             <?= $this->Flash->render(); ?>
-            <div class="container-fluid">
+            <div class="container-fluid ">
                 <?= $this->fetch('content'); ?>
             </div>
 
@@ -75,18 +75,18 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
     <?= $this->Html->script([
-    'jquery/jquery.min',
-    'jquery-ui/jquery-ui.min',
-    'bootstrap/js/bootstrap.bundle.min',
-    'sparklines/sparkline',
-    'jqvmap/jquery.vmap.min',
-    'jqvmap/maps/jquery.vmap.usa',
-    'jquery-knob/jquery.knob.min',
-    'daterangepicker/daterangepicker',
-    'moment/moment.min',
-    'adminlte',
-    'pages/dashboard',
-]);
+        'jquery/jquery.min',
+        'jquery-ui/jquery-ui.min',
+        'bootstrap/js/bootstrap.bundle.min',
+        'sparklines/sparkline',
+        'jqvmap/jquery.vmap.min',
+        'jqvmap/maps/jquery.vmap.usa',
+        'jquery-knob/jquery.knob.min',
+        'daterangepicker/daterangepicker',
+        'moment/moment.min',
+        'adminlte',
+        'pages/dashboard',
+    ]);
 ?>
 </body>
 

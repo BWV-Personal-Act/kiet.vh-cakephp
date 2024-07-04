@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -14,9 +15,11 @@ declare(strict_types=1);
  * @since     0.2.9
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Controller;
 
 use Cake\Controller\Controller;
+use Cake\Event\EventInterface;
 
 /**
  * Application Controller
@@ -37,8 +40,7 @@ class AppController extends Controller
      *
      * @return void
      */
-    public function initialize(): void
-    {
+    public function initialize(): void {
         parent::initialize();
 
         $this->loadComponent('Flash');
@@ -47,7 +49,21 @@ class AppController extends Controller
          * Enable the following component for recommended CakePHP form protection settings.
          * see https://book.cakephp.org/4/en/controllers/components/form-protection.html
          */
-        //$this->loadComponent('FormProtection');
+        // $this->loadComponent('FormProtection');
         $this->loadComponent('Authentication.Authentication');
+        $this->loadComponent('CurrentUser');
+    }
+
+    public function beforeRender(EventInterface $event) {
+        // Lấy thông tin người dùng từ thành phần Authentication
+        $identity = $this->Authentication->getIdentity();
+        if ($identity) {
+            $userId = $identity->getIdentifier();
+            $usersTable = $this->getTableLocator()->get('Users');
+            $currentUser = $usersTable->get($userId);
+            $this->set('currentUser', $currentUser);
+        } else {
+            $this->set('currentUser', '(none)');
+        }
     }
 }
